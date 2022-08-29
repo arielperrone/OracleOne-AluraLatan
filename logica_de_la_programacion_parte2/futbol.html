@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+<h1>Programa para calcular los puntos de un equipo de futbol</h1>
+<script>
+
+// FUNCIONES ----------------------------------------------------------------------------
+// saltarlineas*
+function saltarlineas(){
+	document.write('<br /><br /><br />')
+}
+// imprimir **
+function imprimir(texto) {
+	document.write(texto);
+	saltarlineas();
+}
+// calcular ***
+function calcular (a, b, c){
+	var resultado = (a*3)+(c);
+	return resultado
+}
+// comparar ****
+function comparar(a,b){
+	if(a>b){imprimir('Su equipo hizo mas puntos que el año pasado!')}
+	else if(a<b){imprimir('Su equipo hizo menos puntos que el año pasado')}
+	else if(a==b){imprimir('Su equipo esta igual que el año pasado')}
+	else{imprimir('No hay suficientes datos')}
+}
+// responder
+function responder(frase){
+	let x = isNaN(frase)
+	if (x != true){
+		var texto = 'Tu equipor a acumulado un total de: <strong>'+ frase + '</strong> puntos';
+		imprimir(texto);	
+	}
+}
+
+// VARIABLES -----------------------------------------------------------------------------
+	var victorias = parseInt(prompt('informe la cantidad de victorias'));
+	var derrotas = parseInt(prompt('informe la cantidad de derrotas'));
+	var empates = parseInt(prompt('informe la cantidad de empates'));
+	var puntosAnioAnterior = parseInt(prompt('informe los puntos realizados por su equipor el año anterior'))
+
+
+// EJECUCION ------------------------------------------------------------------------------
+calcular(victorias,derrotas,empates);
+const resultadoFinal = calcular(victorias,derrotas,empates);
+responder(resultadoFinal);
+comparar(resultadoFinal,puntosAnioAnterior);
+
+</script>

@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA: LOS MUNDIALES</h1>
+
+<script>
+// PRESENTACION -----------------------
+alert('¡El primer mundial fue en el año 1930!');
+alert('Te mostraremos en que años fueron todos mundiales hasta la fecha actual');
+
+// VARIABLES -------------------------
+var anhoMundial = 1930;
+var anhoActual = parseInt(prompt('Introduce el año'));
+var anhoSiguiente = anhoMundial;
+
+
+// 	FUNCIONES -----------------------------
+
+// Para presentar en pantalla
+function presentar (frase){
+	document.write(frase);
+	document.write('<br />')
+}
+// La mecanica del juego
+function calculo (a,b){
+	while(a<=b){
+		if (a != 1930){
+		presentar('y también se realizó en el: '+a);
+		a +=4
+		}else{
+			a += 4
+		}
+	}
+	presentar('fin del programa')
+}
+
+// Para echarlo a andar
+presentar('El mundial se realizó en el año: '+anhoMundial);
+calculo(anhoSiguiente,anhoActual)
+
+</script>

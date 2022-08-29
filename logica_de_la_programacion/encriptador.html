@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Encriptador por Ariel Perrone</title>
+</head>
+<body>
+	<h1>Este es mi pequeño encriptador de palabras.</h1>
+	<p>Por favor introduce la o las palabras de deseas enriptar en el campo inferior y preciona "Generar", Te devolveré us palabras encriptadas!</p>
+	<fieldset>
+		<legend>Encriptador</legend>
+		<input type="text" id="palabras" name="palabras" placeholder="Escribe aquí">
+		<button id="boton">Generar</button>
+	</fieldset>
+	<hr>
+	<div id="resultados">
+		
+	</div>
+	<script type="text/javascript">
+
+	// procesar el texto ingresado por el ususario
+	function generar(){
+			var texto = entrada.value;	
+			let rep_a = texto.replace(/a/gi, 'ai');
+			let rep_e = rep_a.replace(/e/gi, 'enter');
+			let rep_i = rep_e.replace(/i/gi, 'imes');
+			let rep_o = rep_i.replace(/o/gi, 'ober');
+			let rep_u = rep_o.replace(/u/gi, 'ufat');
+			let rep_espacios = rep_u.replace(/ /gi, '');
+			var textoEncriptado	= rep_espacios;	 
+			
+			console.log(entrada,typeof(entrada));
+			console.log(texto,typeof(texto));
+			console.log(boton,typeof(boton));
+			console.log(textoEncriptado);
+	// devolver el el texto codificado que el ususario nos dio
+			var p = document.createElement('p');
+			p.textContent = textoEncriptado;
+			resultado.appendChild(p);
+	}
+
+
+	// tomar las variables y la acción del boton	
+		var entrada = document.getElementById('palabras');
+		var boton = document.getElementById('boton');
+		boton.addEventListener('click', generar);
+
+	// tomar las variables de ubicación
+		var resultado = document.getElementById('resultados');
+
+	</script>
+</body>
+<!--ver 0.0.2-->
+</html>

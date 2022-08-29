@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<h2>NUEVO JUEGO DE ADIVINAZAS</h2>
+<h4>VERSIÓN 0.0.1</h4>
+<p>Ingresa un numero en el cuadro de abajo</p>
+<input />
+<button>Verifica</button>
+
+<script>
+// FUNCIONES -------------------------
+function verificar(){
+	for(i=0;i<numero.length;i++){
+		let numeroNuevo = numero[i];
+		if(parseInt(input.value) == numeroNuevo)
+		{
+			alert('ACERTO');
+			break
+		}
+		else 
+		{
+			alert('ERRO');
+			input.focus()	
+		}
+	}
+	alert('Fin del juego! Arranquemos de nuevo');
+	input.value = "";
+	input.focus()
+ }
+
+// VARIABLES -------------------------
+	var input = document.querySelector('input');	
+	var button = document.querySelector('button');		
+	var numero = [0,5,7,9]
+	input.focus();
+
+// DISPARADORES ----------------------
+ button.onclick = verificar;
+</script>

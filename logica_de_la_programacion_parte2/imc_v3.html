@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Ahora tengo en pausa el curso y estoy experimentando un poco para cambiar algunas cosas. En la primera version estaba usando un prompt y ahora lo estoy haciendo un unos inputs-->
+
+<meta charset="UTF_8">
+<h1>Calculo de IMC</h1>
+<div>	
+			<input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
+			<input type="number" name="peso" id="peso" placeholder="Ingresa tu peso">	
+			<input type="number" name="altura" id="altura" placeholder="Ingresa tu altura">
+			<input type="submit" name="boton" id="boton" value="Enviar datos">	
+<!-- <input type="reset" value="Borrar"> se agregara mas adelante-->	
+
+</div>
+<hr>
+<div >
+	<h3>Este es tu indice de masa corporal</h3>
+	<ul>
+		
+	</ul>
+</div>
+<div id="divisor">
+	
+</div>		
+
+<script>
+// Las variables que necesito
+// Tomo las variables de los campos ingresados por el usuario
+// Primero marcamos el campor desde donde tomamos la informacion que en este caso es el document y luego usamos uno de sus metodos getElementBy y aqui la ultima parte hace referencia al identificador, en este caso ID pero que tambien puede ser tag, class u otro.
+	var nombrePersona = document.getElementById('nombre'); 
+	var pesoPersona = document.getElementById('peso');
+	var alturaPersona = document.getElementById('altura');
+	var botonFormulario = document.getElementById('boton');
+	var textoSalida = document.getElementById('divisor');
+	//var resultado = 0;
+
+// La accion del boton	
+botonFormulario.addEventListener("click",function(){
+	F_calcularImc(pesoPersona,alturaPersona);
+	presentar(F_resultado(nombrePersona,imc));
+	presentar(F_calcularTabla(imc));
+}); 
+
+
+// FUNCIONES -------------------------------------------------
+
+function F_calcularImc (a,b){
+	a = parseFloat(pesoPersona.value);
+	b = parseFloat(alturaPersona.value);
+	imc = a/(b * b);
+	return imc
+} 
+
+function F_calcularTabla(imc){
+	let x = 0;
+	var caso;
+	if (imc < 18){x = 1};
+	if (imc >= 18 && imc <= 24){x = 2};
+	if (imc > 24 && imc < 26 ){x = 3};
+	if (imc >= 26){x = 4};
+	switch (x){
+		case 1:
+			caso = 'bajo peso';
+			break;
+	  	case 2:
+	  		caso = 'un peso normal';
+	  		break;
+	  	case 3:
+	  		caso = 'sobrepeso';
+	  		break;
+	  	case 4:
+	  		caso = 'obesidad';
+	  		break;
+	  	default:
+	  		caso = 'algo que no anda bien'
+	}
+	return ' De acuerdo a la tabla del la OMS usted tiene '+ caso;
+}
+
+function F_resultado(nombre2, imc){
+	nombre2 = nombrePersona.value;
+	return (nombre2 + ' tu indice de masa corporal es de: '+imc)
+}	
+
+function presentar(frase){
+	var p = document.createElement('p');
+	p.textContent = frase;
+	textoSalida.appendChild(p);
+}
+
+/*
+Esta es la versión mejorar, mas "inteligente" del ejercicio de imc anterior. Aqui se incluye el condicional IF y tambien he incorporado un SWITCH para darnos el resultado del segundo parrafo.
+Aqui he separado las funciones aun mas que en la parte anterior. 
+*/
+
+</script>

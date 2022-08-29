@@ -1,0 +1,36 @@
+<!-- ESTO ES LO QUE NOS PIDE EL EJERCICIO:
+	¿Cuántos años de diferencia tienes con tu hermano? Escribe un programa que muestre el mensaje ¨Nuestra diferencia de edad es¨, concatenando el resultado de la diferencia de tu edad con la de tu hermano (o de un amigo). La respuesta puede dar negativa, sin duda. No olvides de usar las funciones saltarLinea e imprimir y de incluir la etiqueta <meta> para resolver problemas de acentuación. No necesitas enviar la respuesta, solo basta crear un programa, probar y verificar si todo funciona. ¡Si tienes alguna duda no dejes de postearla en el foro!
+-->
+<meta charset="UTF-8">
+
+<script>
+// Aqui estoy utilizando una funcion prompt que tome los datos desde el usuario y como me trae un string lo convierto en number con el metodo parseInt 
+
+	var edad1 = parseInt(prompt("ingresa tu edad"));
+	var edad2 = parseInt(prompt("ingresa la edad de tu amigo"));
+
+// Declaro las funciones a utilizar. La funcion imprimir utiliza la funcion saltarlinea como se vio en clases
+
+function saltarlinea(){
+	document.write('<br/><br/>')
+}
+
+function imprimir(mensaje){
+	document.write(mensaje);
+	saltarlinea()
+}
+
+// Aca le miestro al usuario los datos que ingreso haciendo uso de las funciones creadas
+
+imprimir('Tu tienes ' + edad1 + ' años');
+imprimir('El tiene '+ edad2 + ' años');
+
+// Y finalmente aqui adelantandome un poquito a lo visto en las clases utilizo los condicionales y las funciones para cerrar el ejercicio
+
+if (edad1 > edad2){
+	imprimir('Tu eres ' + (edad1 - edad2) + ' años mayor que el')
+} else {
+	imprimir('Él es ' + (edad2 - edad1) + ' años mayor que tu')
+}
+
+</script>

@@ -1,0 +1,23 @@
+<meta charset="UTF_8">
+<h1>Calculo de IMC</h1>
+
+<script>
+
+function saltarlinea(){
+	document.write('<br><br><br>')
+}
+
+function imprimir(frase){
+	document.write(frase);
+	saltarlinea()
+}
+// Aqui he realizado una pequeña variación del codigo que hace cristian en el curso usando la funcion prompt que ya habia usado en ejercicios anteriores. Pero el resultado no me estaba dando igual.
+	var pesoPersona = parseFloat(prompt('Ingresa tu peso')); // Mi error estaba en la converción del string a numero. 
+	var alturaPersona = parseFloat(prompt('Ingresa tu altura'));// Al usar parseInt se toma el numero pero se ignora lo que este despues del punto, al poner 1.79 solo tomaba el uno. A lo que me dije si hay un parseINT debe haber un paseFLOAT... y listo!
+function calcularImc (a,b){
+	imcPersona = a/(b*b);
+		imprimir('tu imc es de: ' + imcPersona);
+}
+calcularImc(pesoPersona,alturaPersona)
+
+</script>

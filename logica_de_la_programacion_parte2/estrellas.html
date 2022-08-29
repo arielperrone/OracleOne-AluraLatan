@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<style>
+	* {font-family:monospace;}
+</style>
+
+<h1>PROGRAMA: ESTRELLAS</h1>
+
+<script>
+// Aqui estoy utilizando ciclos anidados convinados con funciones, tratamdo de ir un paso mas allá de lo visto en clase. 
+
+// PRESENTACION -----------------------
+alert('¡Mirá este hermoso arbolito!');
+
+// VARIABLES -------------------------
+	var espacios = '-';
+	var estrellas = '**';
+	var contador = 20;
+	var linea = 0;
+
+// 	FUNCIONES -----------------------------
+
+// Para presentar en pantalla
+function presentar (frase){
+	document.write(frase);
+}
+function counter1(arg){
+	let x = arg;
+ 	while(x>=0){
+		presentar(espacios)
+		x--	
+	}
+}
+function counter2(arg){
+	let x = arg;
+	while(x<=20){
+		presentar(estrellas)
+		x++
+	}
+}
+
+while(linea<=20){
+	presentar('<br />');
+	counter1(contador);
+	counter2(contador);
+	counter1(contador);
+	contador--
+	linea++	
+}	
+
+
+</script>

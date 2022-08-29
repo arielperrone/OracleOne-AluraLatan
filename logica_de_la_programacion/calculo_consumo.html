@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculo de consumo</title>
+</head>
+<body>
+<h3>¿Alcohol o gasolina?</h3>
+<script>
+	var tanque = '40';
+	var km_gas = '480';
+	var km_alco = '300';
+
+	document.write('Un auto que tiene el tanque lleno con ', tanque, ' litros de gasolina recorre ', km_gas, ' lo que nos da ', Math.round(km_gas / tanque),' kilometros recorridos por litro de combustible y un auto que realiza el recorrido pero con ', tanque, ' litros también pero de alcohol hará ',km_alco, ' kilometros, que son tanto asi como ',Math.round(km_alco / tanque), ' kilometros recorridos por cada litro.');
+</script>
+</body>
+</html>

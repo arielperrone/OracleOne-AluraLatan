@@ -1,0 +1,55 @@
+
+<meta charset="utf-8">
+
+<script >
+	//alert("la edad de cristian es...");
+	//alert("?")
+	//document.write("la edad de cristian es...");
+	//document.write("<br />");
+	//document.write("?")
+	//document.write(100/4);
+	//document.write("20"+"15")
+	//document.write("20"+15)
+	//document.write("el promedio de edad de juan, pedro y carlos es: ");
+	//document.write((15+23+22)/3);
+
+	function saltarlinea() {
+		document.write('<br/><br/>')
+	}
+
+	document.write("la suma de edad de juan, pedro y carlos es: ", 15+23+22);
+	saltarlinea()
+	
+		var sujeto1 = 'juan';
+		var sujeto2 = 'pedro';
+		var sujeto3 = 'carlos'
+		var sujeto1_nacimiento = '1999'
+		var sujeto2_nacimiento = '2000'
+		var  sujeto3_nacimiento = '2007'
+		var fecha_string = prompt("ingresa el año actual");
+		var fecha_intiger = parseInt(fecha_string);
+
+	function edad (a, b){
+		document.write("la edad de ", a, " es de ", (fecha_intiger-b));
+		saltarlinea()
+	}
+	edad(sujeto1, sujeto1_nacimiento);
+	edad(sujeto2, sujeto2_nacimiento);
+	edad(sujeto3, sujeto3_nacimiento);
+
+			var sujeta1 = 'julia';
+			var sujeta2 = 'gimena';
+			var sujeta3 = 'josefina';
+			var sujeta1_nacimiento = '1995';
+			var sujeta2_nacimiento = '2003';
+			var sujeta3_nacimiento = '2007';
+			var promedio = ((fecha_intiger - sujeta1_nacimiento + fecha_intiger - sujeta2_nacimiento + fecha_intiger - sujeta3_nacimiento)/3);
+
+    edad(sujeta1, sujeta1_nacimiento);
+	edad(sujeta2, sujeta2_nacimiento);
+	edad(sujeta3, sujeta3_nacimiento);
+
+	document.write('la edad promedio de las 3 mujeres es: ',Math.round(promedio));
+	document.write('<br/><br/>')
+
+</script>

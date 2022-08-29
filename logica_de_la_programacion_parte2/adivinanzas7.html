@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<h2>NUEVO JUEGO DE ADIVINAZAS</h2>
+<h4>VERSIÓN 0.0.6</h4>
+<p>Ingresa un numero en el cuadro de abajo</p>
+<input />
+<button>Verifica</button>
+
+<script>
+// FUNCIONES -------------------------
+function verificar(){
+ 	numeros.forEach(function (a){
+			var b = parseInt(input.value);
+ 			if(a == b){alert('ACERTO');}
+ 			else {alert('ERRO')}	
+	 	} 
+ 	)
+ 	alert('fin del juego') 
+} // Esta nueva version incorpora el forEach en lugar de iterar sobre el array con un bucle for comun o un while.
+
+function aleatoria(){
+
+} // Esta función será la que nos dará los numeros 
+
+// VARIABLES -------------------------
+	var input = document.querySelector('input');	
+	var button = document.querySelector('button');		
+	var numeros = [0,5,7,9];
+	input.focus();
+
+// DISPARADORES ----------------------
+ button.onclick = verificar;
+</script>

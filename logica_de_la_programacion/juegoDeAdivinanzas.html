@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA: JUEGO DE ADIVINANZAS</h1>
+
+<script>
+// PRESENTACION -----------------------
+alert('¡Bien venido sea usted a este juego de adivinanzas!');
+alert('La mecanica del juego es super sencilla:');
+alert('Solo debes decirme un numero y vemos si coincide con el que yo habia pensado')
+// VARIABLES -------------------------
+	var nombreDelJugador = prompt('Introduce tu nombre por favor');
+	var numeroDelJugador = parseInt(prompt('Dime un numero entre 0 y 10 a ver si adivinas'));
+	var numeoDelOrdenador = Math.round(Math.random()*10);
+
+// 	FUNCIONES -----------------------------
+
+// Para presentar en pantalla
+function presentar (frase){
+	document.write(frase);
+	document.write('<br /><br /><br />')
+}
+// La mecanica del juego
+function logicaDelJuego(a,b,c){
+	if (a != b && Math.abs(a-b) < 3){
+		var frase = "¡No has acertado " + c + "!. Pero has estado cerca...<br />Nuestro numero es; "+ b;
+	}
+	else if(a != b && Math.abs(a-b) > 3){
+		var frase = "Has quedado muy lejos<br />Tu elegiste: " + a + ", y yo: " + b
+	}
+	else{
+		var frase = "¡¡Adivinaste!!."
+	}
+	return  frase
+}
+// Para echarlo a andar
+var frase = logicaDelJuego(numeroDelJugador,numeoDelOrdenador,nombreDelJugador);
+presentar(frase);
+</script>

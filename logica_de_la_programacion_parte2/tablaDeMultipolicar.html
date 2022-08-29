@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA: TABLA DE MULTIPLICAR</h1>
+
+<script>
+// PRESENTACION -----------------------
+alert('¡Veamos las tablas de multiplicar!');
+
+// VARIABLES -------------------------
+const numero = parseInt(prompt('Elige un numero'));
+const numeroFinal = parseInt(prompt('Y hasta que numero quieres?'))
+var a = 0;
+
+// 	FUNCIONES -----------------------------
+
+// Para presentar en pantalla
+function presentar (frase){
+	document.write(frase);
+	document.write('<br />')
+}
+// La mecanica del juego
+while(a<=numeroFinal){
+	presentar(numero + ' x ' + a + ' = '+ (numero*a));
+	a += 1;
+}
+presentar('fin del programa');
+</script>

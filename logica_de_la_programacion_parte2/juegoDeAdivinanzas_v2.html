@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA: JUEGO DE COINCIDENCIAS</h1>
+
+<script>
+// PRESENTACION -----------------------
+alert('¡Bien venido sea usted a este juego de coincidencias!');
+alert('La mecanica del juego es super sencilla:');
+alert('Solo debes decirme un numero y vemos si coincide con el que yo habia pensado')
+alert('Tienes 3 intentos')
+// VARIABLES -------------------------
+	var nombreDelJugador = prompt('Introduce tu nombre por favor');
+	var numeroDelJugador = parseInt(prompt('Dime un numero entre 0 y 10 a ver si adivinas'));
+	var numeoDelOrdenador = Math.round(Math.random()*10);
+	console.log(numeoDelOrdenador);
+
+// 	FUNCIONES -----------------------------
+
+// Para presentar en pantalla
+function presentar (frase){
+	document.write(frase);
+	document.write('<br /><br /><br />')
+}
+// La mecanica del juego
+function logicaDelJuego(a,b,c){
+	let intentos = 2;
+
+	while(intentos > 0){
+		var frase = '<h2>Lo sieto mucho ' + c + '. Intentalo de nuevo<h2>';	
+		if (a != b && Math.abs(a-b) < 3){
+			alert("¡No has acertado " + c + "!. Pero has estado cerca...");
+			a = parseInt(prompt('Dime otro numero entre 0 y 10 a ver si tienes mas suerte!'));
+		}
+		else if(a != b && Math.abs(a-b) > 3){
+			alert("Has quedado muy lejos");
+			a = parseInt(prompt('Dime otro numero entre 0 y 10 a ver si tienes mas suerte!'));
+		}
+		else if(a == b){
+			var frase = "<h2>Acertaste " + c + "! Felicitaciones!</h2>" 
+			break
+		}
+		intentos--;		
+	}
+	return frase
+}
+// Para echarlo a andar
+var frase = logicaDelJuego(numeroDelJugador,numeoDelOrdenador,nombreDelJugador);
+presentar(frase);
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Ahora tengo en pausa el curso y estoy experimentando un poco para cambiar algunas cosas. En la primera version estaba usando un prompt y ahora lo estoy haciendo un unos inputs-->
+
+<meta charset="UTF_8">
+<h1>Calculo de IMC</h1>
+<div>	
+			<input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
+			<input type="number" name="peso" id="peso" placeholder="Ingresa tu peso">	
+			<input type="number" name="altura" id="altura" placeholder="Ingresa tu altura">
+			<input type="submit" name="boton" id="boton" value="Enviar datos">	
+			<!--<input type="reset" value="Borrar">	-->
+
+</div>
+<hr>
+<div >
+	<h3>Este es tu indice de masa corporal</h3>
+	<ul>
+		
+	</ul>
+</div>
+<div id="divisor">
+	
+</div>		
+
+<script>
+// Las variables que necesito
+// Tomo las variables de los campos ingresados por el usuario
+// Primero marcamos el campor desde donde tomamos la informacion que en este caso es el document y luego usamos uno de sus metodos getElementBy y aqui la ultima parte hace referencia al identificador, en este caso ID pero que tambien puede ser tag, class u otro.
+	var botonFormulario = document.getElementById('boton');
+	var nombrePersona = document.getElementById('nombre'); 
+	var pesoPersona = document.getElementById('peso');
+	var alturaPersona = document.getElementById('altura');
+	var imcResultado = document.querySelector('ul') // Otro metodo para seleccionar es el querySelector
+	var imcResultado2 = document.getElementById('divisor')
+	
+// La accion del boton	
+botonFormulario.addEventListener("click", function calcularImc (nombre,peso,altura){
+	let nombre = nombrePersona.value;
+	let peso = pesoPersona.value;
+	let altura = alturaPersona.value;
+	let imcPersona = peso/(altura * altura);	
+	console.log(nombre); // El console.log no es necesario
+	console.log(peso); // solo lo uso para comprobar
+	console.log(altura); // si los datos salen bien
+	let resultado = nombre + ' tu indice de masa corporal es de: '+imcPersona
+
+// Primer intento exitoso
+/*	var li = document.createElement('li');
+	li.textContent = resultado
+	imcResultado.appendChild(li);
+*/ // Intentaba hacerlo desde un video de Andres Nuñez donde explicaba como hacer un pequeño programa TODO
+
+// Segundo intento exitoso y definitivo por ahora
+	var p = document.createElement('p');
+	p.textContent = resultado;
+	imcResultado2.appendChild(p);
+}) 
+// Aqui hice una variación y la explico linea por linea
+/*
+	var p = document.createElement('p'); Uno de los metodos de la funcion document es createElement que se ocupa de crear un elemento HTML, en este caso p (parrafo), en el caso anterior li (list item)
+	
+	p.textContent = resultado; En esta parte a un metodo del objeto p (que tambien puede ser li u otro) textContent se le asigna el resultado de del proceso de la funcion que esta mas arriba, obviamente un texto
+
+	imcResultado2.appendChild(p); a imcResultado2 se le asigno el id del elemento div y luego se usa el metodo appendChild que agrega unnuevo nodo hijo al nodo seleccionado. Se le asigna P a DIV
+
+*/
+	
+</script>
