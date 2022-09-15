@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;600&display=swap" rel="stylesheet"> 
+	<style type="text/css">
+	/* Estilo mobile first */
+		* {font-family: 'Yanone Kaffeesatz', sans-serif; margin: 8px;}
+		html {box-sizing: border-box;}
+		body {background-image: url("./aluralogo.png"); background-repeat: repeat-y; background-size: contain;}
+		h1 {font-size: 64px;}
+		p {font-size: 32px;}
+		fieldset { border-radius: 10px; margin: 10px;}
+		legend {font-size: 24px;}
+		textarea {font-size: 24px; border-radius: 10px;}
+		button {font-size: 32px; padding: 8px;}
+		div	{display: flex; justify-content: center; align-items: center;}
+		.oculto {display: none;}
+		#p-cartel{padding: 20px 10px;background-color: black;color: whitesmoke; border-radius: 10px; font-weight: bold; text-align: center;}
+		#p-cartel2{padding: 20px 10px;background-color: black;color: whitesmoke; border-radius: 10px; font-weight: bold; text-align: center;}
+		
+	/* Tablet */
+
+
+	/*Monitor*/
+
+	</style>
+
+	<title>Encriptador por Ariel Perrone</title>
+</head>
+<body>
+	<h1>Este es mi pequeño encriptador de palabras.</h1>
+	<fieldset>
+		<legend>Instrucciones</legend>
+		<p id="p-instrucciones">Por favor introduce la o las palabras de deseas encriptar en el campo inferior y preciona "Generar", Te devolveré tus palabras encriptadas!</p>
+	</fieldset>
+	<fieldset id="campo-1">
+		<legend>Encriptador</legend>
+		<div>
+			<textarea type="textarea" rows="10" cols="30" id="palabras" name="palabras" placeholder="Escribe aquí" autofocus ="true"></textarea>
+			<p id="p-cartel" class="oculto">TU TEXTO HA SIDO ENCRIPTADO!!!</p>
+		</div>
+		<div>
+			<button id="boton-generar">Generar</button>
+		</div>
+	</fieldset>
+	<fieldset id="campo-3" class="oculto">
+		<legend>Des-Encriptador</legend>
+		<div>
+			<textarea type="textarea" rows="10" cols="30" id="palabras-para-desencriptar" name="palabras" placeholder="Pega aquí tu texto secreto generado previamente" autofocus ="true"></textarea>
+		</div>
+		<div>
+			<button id="boton-pegar">Pegar</button>
+		</div>
+		<div>
+			<button id="boton-regenerar" class="oculto">Regenerar</button>
+		</div>	
+	</fieldset>
+	<hr>
+	<fieldset id="campo-2" class="oculto">
+		<legend>Texto Encriptadpo</legend>	
+		<div>	
+			<textarea type="textarea" rows="15" cols="30"  name="palabras-encriptadas" placeholder="DEBES ESCRIBIR ARRIBA Y LUEGO PRECIONAR EL BOTON" id="resultados" readonly="true"></textarea>
+		</div>
+		<div>
+			<button id="boton-copiar" class="oculto">Copiar</button>
+		</div>
+		<p id="p-cartel2" class="oculto">TEXTO COPIADO!!!</p>
+	</fieldset>
+	<fieldset class="oculto">
+		<legend>Mensaje</legend>
+		<textarea type="textarea" rows="15" cols="30"  name="palabras-desencriptadas" id="salida" readonly="true"></textarea>
+	</fieldset>
+	<script type="text/javascript">
+
+		// procesar el texto ingresado por el ususario
+	function generar(){
+			var texto = entrada.value;	
+			let rep_a = texto.replace(/a/gi, 'ai');
+			let rep_e = rep_a.replace(/e/gi, 'enter');
+			let rep_i = rep_e.replace(/i/gi, 'imes');
+			let rep_o = rep_i.replace(/o/gi, 'ober');
+			let rep_u = rep_o.replace(/u/gi, 'ufat');
+			var textoEncriptado	= rep_u;
+		
+		// devolver el el texto codificado que el ususario nos dio, cambia las instrucciones y colocar el boton COPIAR
+			let champTwo = document.getElementById("campo-2");
+			champTwo.removeAttribute("class","oculto");
+			boton_C.removeAttribute("class","oculto");
+			boton_G.setAttribute("class","oculto");
+			resultado.innerText = textoEncriptado;
+			palabras.setAttribute("class","oculto");
+			cartel.removeAttribute("class","oculto");
+			instrucciones.innerText = "Ahora puede copiar tu texto para luego desencriptarlo!";
+		}		
+
+		var textoSecreto;
+
+		function copiar(){
+			textoSecreto = document.getElementById('resultados');	
+			cartel2 = document.getElementById('p-cartel2')
+			boton_C.setAttribute("class","oculto");
+			campo1.setAttribute("class","oculto")
+			resultado.setAttribute("class","oculto")
+			campo3.removeAttribute("class","oculto")
+			cartel2.removeAttribute("class","oculto")
+			instrucciones.innerText = "Presiona PEGAR para insetar automaticamente el texto!"; 	
+			return textoSecreto
+		}
+		
+		function pegar(){
+			var salida = document.getElementById('palabras-para-desencriptar');
+			boton_R.removeAttribute("class", "oculto");
+			boton_P.setAttribute("class","oculto")
+			campo2.setAttribute("class","oculto")
+			instrucciones.innerText = "Preciona REGENERAR! Esperamos sean buenas noticias!";
+			textoSecreto = textoSecreto.value;
+			salida.innerText = textoSecreto;
+			return textoSecreto
+		}
+
+		function regenerar(){	
+			let rep_ai = textoSecreto.replace(/ai/gi, 'a');
+			let rep_enter = rep_ai.replace(/enter/gi, 'e');
+			let rep_imes = rep_enter.replace(/imes/gi, 'i');
+			let rep_ober = rep_imes.replace(/ober/gi, 'o');
+			let rep_ufat = rep_ober.replace(/ufat/gi, 'u');
+			var textoDesencriptado	= rep_ufat;
+			console.log(textoDesencriptado)
+		}
+	
+	// toma la ubicación del campo 1
+		var campo1 = document.getElementById("campo-1")
+
+	// tomar la ubicacion del campo 2
+		var campo2 = document.getElementById("campo-2")
+
+	// tomar la ubicacion del fieldset campo-3
+		var campo3 = document.getElementById('campo-3');
+
+	// tomar la ubicación del parrafo de instrucciones
+	var instrucciones = document.getElementById('p-instrucciones');
+
+	// tomar la ubicación de las palabras del usuario
+		var entrada = document.getElementById('palabras');
+
+	// tomar la ubicación de el parrafo oculto
+		var cartel = document.getElementById('p-cartel');
+
+	// tomar la ubicación  y la acción del boton GENERAR	
+		var boton_G = document.getElementById('boton-generar');
+		boton_G.addEventListener('click', generar);
+
+	// tomar la ubicación y la escucha del boton COPIAR
+		var boton_C = document.getElementById('boton-copiar');
+		boton_C.addEventListener('click', copiar);
+	
+	// tomar la ubicacion y la escucha del boton PEGAR
+		var boton_P = document.getElementById('boton-pegar');
+		boton_P.addEventListener('click',pegar);
+
+	// tomar la ubicación y la accion del boton REGENERAR
+		var boton_R = document.getElementById('boton-regenerar');
+		boton_R.addEventListener('click', regenerar)
+
+
+	// tomar las variables de ubicación
+		var resultado = document.getElementById('resultados');
+
+	</script>
+</body>
+<!--ver 0.0.2-->
+</html>
