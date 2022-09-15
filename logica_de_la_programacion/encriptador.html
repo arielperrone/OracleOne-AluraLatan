@@ -3,20 +3,51 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;600&display=swap" rel="stylesheet"> 
+	<style type="text/css">
+	/* Estilo mobile first */
+		* {font-family: 'Yanone Kaffeesatz', sans-serif; margin: 8px;}
+		html {box-sizing: border-box;}
+		h1 {font-size: 64px;}
+		p {font-size: 32px;}
+		fieldset { border-radius: 10px; margin: 10px;}
+		legend {font-size: 24px;}
+		textarea {font-size: 24px; border-radius: 10px;}
+		button {font-size: 32px; padding: 8px;}
+		div	{display: flex; justify-content: center; align-items: center;}
+		.ocultar-campo {display: none;}
+
+		}
+	/* Tablet */
+
+
+	/*Monitor*/
+
+	</style>
+
 	<title>Encriptador por Ariel Perrone</title>
 </head>
 <body>
 	<h1>Este es mi pequeño encriptador de palabras.</h1>
-	<p>Por favor introduce la o las palabras de deseas enriptar en el campo inferior y preciona "Generar", Te devolveré us palabras encriptadas!</p>
-	<fieldset>
+	<p>Por favor introduce la o las palabras de deseas encriptar en el campo inferior y preciona "Generar", Te devolveré tus palabras encriptadas!</p>
+	<fieldset id="campo-1">
 		<legend>Encriptador</legend>
-		<input type="text" id="palabras" name="palabras" placeholder="Escribe aquí">
+		<div>
+			<textarea type="textarea" rows="10" cols="30" id="palabras" name="palabras" placeholder="Escribe aquí" autofocus ="true"></textarea>
+		</div>
+		<div>
 		<button id="boton">Generar</button>
+		</div>	
 	</fieldset>
 	<hr>
-	<div id="resultados">
-		
-	</div>
+	<fieldset id="campo-2" class="ocultar-campo">
+		<legend>Texto Encriptadpo</legend>	
+		<div>	
+			<textarea type="textarea" rows="15" cols="30"  name="palabras-encriptadas" placeholder="DEBES ESCRIBIR ARRIBA Y LUEGO PRECIONAR EL BOTON" id="resultados"></textarea>
+		</div>
+	</fieldset>
 	<script type="text/javascript">
 
 	// procesar el texto ingresado por el ususario
@@ -27,17 +58,18 @@
 			let rep_i = rep_e.replace(/i/gi, 'imes');
 			let rep_o = rep_i.replace(/o/gi, 'ober');
 			let rep_u = rep_o.replace(/u/gi, 'ufat');
-			let rep_espacios = rep_u.replace(/ /gi, '');
-			var textoEncriptado	= rep_espacios;	 
+			var textoEncriptado	= rep_u;	 
 			
-			console.log(entrada,typeof(entrada));
-			console.log(texto,typeof(texto));
-			console.log(boton,typeof(boton));
-			console.log(textoEncriptado);
 	// devolver el el texto codificado que el ususario nos dio
-			var p = document.createElement('p');
-			p.textContent = textoEncriptado;
-			resultado.appendChild(p);
+			//var p = document.createElement('p');
+			//p.textContent = textoEncriptado;
+			//resultado.setAttribute("autofocus","true");
+			//resultado.appendChild(p);
+			let champTwo = document.getElementById("campo-2");
+			champTwo.removeAttribute("class","ocultar-campo");
+
+			resultado.innerText = textoEncriptado;
+
 	}
 
 
