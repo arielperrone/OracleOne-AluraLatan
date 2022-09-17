@@ -15,7 +15,7 @@
 		p {font-size: 32px;}
 		fieldset { border-radius: 10px; margin: 10px;}
 		legend {font-size: 24px;}
-		textarea {font-size: 24px; border-radius: 10px;}
+		textarea {font-size: 24px; border-radius: 10px; resize: none;}
 		button {font-size: 32px; padding: 8px;}
 		div	{display: flex; justify-content: center; align-items: center;}
 		.oculto {display: none;}
@@ -34,7 +34,7 @@
 <body>
 	<h1>Este es mi pequeño encriptador de palabras.</h1>
 	<fieldset>
-		<legend>Instrucciones</legend>
+		<legend id="soyLeyenda">Instrucciones</legend>
 		<p id="p-instrucciones">Por favor introduce la o las palabras de deseas encriptar en el campo inferior y preciona "Generar", Te devolveré tus palabras encriptadas!</p>
 	</fieldset>
 	<fieldset id="campo-1">
@@ -70,9 +70,12 @@
 		</div>
 		<p id="p-cartel2" class="oculto">TEXTO COPIADO!!!</p>
 	</fieldset>
-	<fieldset class="oculto">
+	<fieldset id="campo-4" class="oculto">
 		<legend>Mensaje</legend>
-		<textarea type="textarea" rows="15" cols="30"  name="palabras-desencriptadas" id="salida" readonly="true"></textarea>
+		<p id="salida"></p>
+		<div>
+			<button id="boton-recargar" class="oculto">Volver</button>
+		</div>
 	</fieldset>
 	<script type="text/javascript">
 
@@ -112,7 +115,6 @@
 		}
 		
 		function pegar(){
-			var salida = document.getElementById('palabras-para-desencriptar');
 			boton_R.removeAttribute("class", "oculto");
 			boton_P.setAttribute("class","oculto")
 			campo2.setAttribute("class","oculto")
@@ -121,56 +123,66 @@
 			salida.innerText = textoSecreto;
 			return textoSecreto
 		}
-
-		function regenerar(){	
+		
+		function regenerar(){
 			let rep_ai = textoSecreto.replace(/ai/gi, 'a');
 			let rep_enter = rep_ai.replace(/enter/gi, 'e');
 			let rep_imes = rep_enter.replace(/imes/gi, 'i');
 			let rep_ober = rep_imes.replace(/ober/gi, 'o');
 			let rep_ufat = rep_ober.replace(/ufat/gi, 'u');
-			var textoDesencriptado	= rep_ufat;
+			let rep_mes = rep_ufat.replace(/mes/gi, '');
+			let textoDesencriptado	= rep_mes;
 			console.log(textoDesencriptado)
+			
+			campo3.setAttribute("class","oculto");
+			let salidaFinal = document.getElementById('salida')
+			campo4.removeAttribute("class","oculto")
+			salidaFinal.innerText = textoDesencriptado;	
+			boton_RL.removeAttribute("class","oculto")
+			soyLeyenda.innerText = "GRACIAS";
+			instrucciones.innerText = "Puedes recargar la pagina y comenzar de nuevo";
+		}
+		
+		function fin(){
+			location.reload()
 		}
 	
-	// toma la ubicación del campo 1
-		var campo1 = document.getElementById("campo-1")
-
-	// tomar la ubicacion del campo 2
-		var campo2 = document.getElementById("campo-2")
-
-	// tomar la ubicacion del fieldset campo-3
+	// toma la ubicación de los campos
+		var campo1 = document.getElementById('campo-1');
+		var campo2 = document.getElementById('campo-2');
 		var campo3 = document.getElementById('campo-3');
+		var campo4 = document.getElementById('campo-4');
 
 	// tomar la ubicación del parrafo de instrucciones
 	var instrucciones = document.getElementById('p-instrucciones');
-
+	
 	// tomar la ubicación de las palabras del usuario
 		var entrada = document.getElementById('palabras');
 
-	// tomar la ubicación de el parrafo oculto
+		// tomar la ubicación de el parrafo oculto
 		var cartel = document.getElementById('p-cartel');
-
-	// tomar la ubicación  y la acción del boton GENERAR	
-		var boton_G = document.getElementById('boton-generar');
+		
+	
+		var boton_G = document.getElementById('boton-generar');// boton GENERAR	
 		boton_G.addEventListener('click', generar);
 
-	// tomar la ubicación y la escucha del boton COPIAR
-		var boton_C = document.getElementById('boton-copiar');
+		var boton_C = document.getElementById('boton-copiar');// boton COPIAR
 		boton_C.addEventListener('click', copiar);
 	
-	// tomar la ubicacion y la escucha del boton PEGAR
-		var boton_P = document.getElementById('boton-pegar');
-		boton_P.addEventListener('click',pegar);
+		var boton_P = document.getElementById('boton-pegar');// boton PEGAR
+		boton_P.addEventListener('click', pegar);
 
-	// tomar la ubicación y la accion del boton REGENERAR
-		var boton_R = document.getElementById('boton-regenerar');
+		var boton_R = document.getElementById('boton-regenerar');//boton REGENERAR
 		boton_R.addEventListener('click', regenerar)
-
-
-	// tomar las variables de ubicación
+		
+		var boton_RL = document.getElementById('boton-recargar');// boton RECARGAR
+		boton_RL.addEventListener('click', fin)
+		
 		var resultado = document.getElementById('resultados');
-
-	</script>
+		var soyLeyenda = document.getElementById('soyLeyenda');
+		var salida = document.getElementById('palabras-para-desencriptar');
+		salida.innerText = "";
+		</script>
 </body>
-<!--ver 0.0.2-->
+<!--ver 0.1.0-->
 </html>
