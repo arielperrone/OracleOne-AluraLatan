@@ -30,6 +30,26 @@ function dibujarCirculo(Xcenter,Ycenter,size,color)
 	pincel.beginPath();
 	pincel.arc(Xcenter,Ycenter,size,angle,radius);
 	pincel.fill();
-// 
+
+function variosCuadrados(tamanio,cantidad_X,cantidad_Y,color){
+	let alto = tamanio;
+	let ancho = tamanio;
+	for(j=0;j<cantidad_Y;j++){
+		for(i=0;i<cantidad_X;i++){
+			dibujarRectangulo((ancho+1)*i,(alto+1)*j,ancho,alto,color);
+		}
+	}
+}
+
+function fila(posicion,tamanio,cantidad,color){
+	let alto = tamanio;
+	let ancho = tamanio;
+	let fila = alto*posicion;
+	for(i=0;i<cantidad;i++){
+		dibujarRectangulo(ancho*i,fila,ancho,alto,color)	
+	}
+}
+
+	// 
 
 </script>
