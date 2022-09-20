@@ -22,7 +22,7 @@ function dibujarTriangulo(x1,y1,x2,y2,x3,y3,color){
 	pincel.fill();
 }
 
-function dibujarCirculo(Xcenter,Ycenter,size,color)
+function dibujarCirculo(Xcenter,Ycenter,size,color){
 	let angle = 0; // seteado en 0 para un circulo perfecto
 	const PI = 3.14; // valor inmutable
 	let radius = 2*PI; // radio 
@@ -30,7 +30,7 @@ function dibujarCirculo(Xcenter,Ycenter,size,color)
 	pincel.beginPath();
 	pincel.arc(Xcenter,Ycenter,size,angle,radius);
 	pincel.fill();
-
+}
 function variosCuadrados(tamanio,cantidad_X,cantidad_Y,color){
 	let alto = tamanio;
 	let ancho = tamanio;

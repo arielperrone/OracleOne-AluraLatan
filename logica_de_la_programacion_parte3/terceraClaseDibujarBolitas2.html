@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<h2>Dibujo con Canvas</h2>
+<canvas width="600" height="400"></canvas>
+<p class="ho" name="1">Hola</p>
+<p class="ho" name="2">Hola</p>
+<script>
+	var pizarra = document.querySelector('canvas');
+	var pincel = pizarra.getContext('2d')
+	pizarra.style.border = '2px solid black'
+
+
+let num = 0;
+function numColor(){
+	if(num<9){
+		num = num + 1;
+	} 
+	else {
+		num = 0
+	}
+	console.log(num);
+	return false
+}
+pizarra.oncontextmenu = numColor;
+
+function dibujarCirculo(evento){
+	var x = evento.pageX -pizarra.offsetLeft;
+	var y = evento.pageY -pizarra.offsetTop;
+	let size = 10;
+	let angle = 0; // seteado en 0 para un circulo perfecto
+	const PI = 3.14; // valor inmutable
+	let radius = 2*PI; // radio 
+	const colors = ['red','blue','yellow','green','orange','black','grey','pink','purple','brown'];
+	pincel.fillStyle = colors[num];
+	pincel.beginPath();
+	pincel.arc(x,y,size,angle,radius);
+	pincel.fill();
+	console.log(typeof(num))
+}
+pizarra.onclick = dibujarCirculo;
+
+</script>
