@@ -1,0 +1,36 @@
+<canvas width="600" height="400"></canvas>
+<script>
+    var pizarra = document.querySelector('canvas');
+    var pincel = pizarra.getContext('2d');
+    pizarra.style.border = "1px outset lightgrey";
+    pizarra.style.boxShadow = "10px 10px 28px grey";
+
+    function diseniaCircunferencia(x,y,radio){
+        pincel.fillStyle = "green";
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill()
+    }
+    function limpiarPantalla(){
+        pincel.clearRect(0,0,600,400)
+    }
+    let coordenada = 20;
+    let estado = true;
+    function dibujarCirculos(){
+        limpiarPantalla();
+        diseniaCircunferencia(coordenada,20,10);
+        if(estado && coordenada<580){
+            coordenada++
+        }else{
+            coordenada--
+            estado = false;
+        }
+        if(coordenada<20){
+            estado = true;
+        }
+
+        console.log(coordenada)
+    }
+    setInterval(dibujarCirculos,5,)
+    
+    </script>

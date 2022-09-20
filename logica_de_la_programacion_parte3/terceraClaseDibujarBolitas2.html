@@ -1,22 +1,27 @@
 <meta charset="utf-8">
-<h2>Dibujo con Canvas</h2>
+<h2>Draw with Canvas</h2>
 <canvas width="600" height="400"></canvas>
-<p class="ho" name="1">Hola</p>
-<p class="ho" name="2">Hola</p>
+<h2 class="ho">PRESS RIGHT BUTTON TO CHANGE THE COLORS</h2>
+
 <script>
 	var pizarra = document.querySelector('canvas');
 	var pincel = pizarra.getContext('2d')
+	var h2 = document.querySelector('.ho')
 	pizarra.style.border = '2px solid black'
-
+	const colors = ['red','blue','yellow','green','orange','black','grey','pink','purple','brown'];
 
 let num = 0;
 function numColor(){
-	if(num<9){
-		num = num + 1;
+	if(num<colors.length){
+		num++;
 	} 
 	else {
 		num = 0
 	}
+	h2.style.textTransform = "uppercase";
+	h2.style.color = colors[num];
+	h2.style.backgroundColor = "#ddd"
+	h2.innerText = "color selected: "+colors[num]
 	console.log(num);
 	return false
 }
@@ -29,7 +34,6 @@ function dibujarCirculo(evento){
 	let angle = 0; // seteado en 0 para un circulo perfecto
 	const PI = 3.14; // valor inmutable
 	let radius = 2*PI; // radio 
-	const colors = ['red','blue','yellow','green','orange','black','grey','pink','purple','brown'];
 	pincel.fillStyle = colors[num];
 	pincel.beginPath();
 	pincel.arc(x,y,size,angle,radius);
