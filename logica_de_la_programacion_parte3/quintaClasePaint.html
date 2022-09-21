@@ -1,0 +1,67 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+// VARIABLES DEL ENTORNO ---------------------------------
+// AREA DE DIBUJO
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+// PALETA DE COLORES
+    pincel.fillStyle = "red";
+    pincel.fillRect(5,5,50,50);
+    pincel.fillStyle = "green";
+    pincel.fillRect(60,5,50,50);
+    pincel.fillStyle = "blue";
+    pincel.fillRect(115,5,50,50);
+// VARIABLES DEL DIBUJO Y LA PALETA
+    var puedoDibujar = false;
+    var colorElegido = "blue";
+
+// FUNCIONES ----------------------------------------------
+    
+// PARA ELEGIR EL COLOR    
+    function elegirColor(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        colors = ["red","green","blue"];
+        if((x > 5 && x < 50) && (y > 5 && y < 55)){colorElegido = colors[0]}
+        else if((x > 60 && x < 110) && (y > 5 && y < 55)){colorElegido = colors[1]}
+        else if((x > 115 && x < 165) && (y > 5 && y < 55)){colorElegido = colors[2]}
+        else [colorElegido = "blue"]
+        return colorElegido
+    }
+// PARA DIBUJAR EL CIRCULO
+    function dibujarCirculo(evento) {
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if(x < 165 && y < 60){
+            puedoDibujar = false
+
+        }else if(puedoDibujar){
+            pincel.fillStyle = colorElegido;
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+            }
+    }
+// PARA HABILITAR EL TRAZO
+    function habilitarDibujar(evento) {
+        
+        puedoDibujar = true;
+    }
+// PARA DESHABILITAR EL TRAZO
+    function deshabilitarDibujar() {
+        
+        puedoDibujar = false;
+    }
+    
+// DISPARADORES -----------------------------------------------    
+    pantalla.onclick = elegirColor;
+    pantalla.onmousemove = dibujarCirculo;
+    pantalla.onmousedown = habilitarDibujar;
+    pantalla.onmouseup = deshabilitarDibujar;
+
+</script>

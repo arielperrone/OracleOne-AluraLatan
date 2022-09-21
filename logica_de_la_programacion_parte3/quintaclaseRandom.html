@@ -1,0 +1,40 @@
+<canvas width="600" height="600"></canvas>
+<script>
+    var pizarra = document.querySelector('canvas');
+    var pincel = pizarra.getContext('2d');
+    pizarra.style.border = "1px outset lightgrey";
+    pizarra.style.boxShadow = "10px 10px 28px grey";
+    const colors = ['red','blue','yellow','green','orange','black','grey','pink','purple','brown'];
+
+    function diseniaCircunferencia(x,y,radio){
+        pincel.fillStyle = colors[randomX[2]];
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill()
+    }
+    function limpiarPantalla(){
+        pincel.clearRect(0,0,600,600)
+    }
+    function randonNumber(){
+        let numero_1 = Math.round(Math.random()*5);
+        let numero_2 = Math.round(Math.random()*9);;
+        let numero_3 = Math.round(Math.random()*9);;
+       // console.log(numero_1,numero_2,numero_3);
+        let resultado = `${numero_1}${numero_2}${numero_3}`;
+        console.log(resultado);
+        return resultado
+    }
+    let randomX;
+    let randomY;
+    
+    function dibujarCirculos(){
+        limpiarPantalla();
+        randomX = randonNumber();
+        randomY = randonNumber();
+       // console.log(randomX+ ' '+randomY)
+        diseniaCircunferencia(randomX,randomY,10);
+    }
+    let timeId = setInterval(dibujarCirculos,1000,)
+    //clearInterval(timeId,1000);
+
+    </script>
