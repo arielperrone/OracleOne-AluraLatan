@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link class="CSS-0" rel="stylesheet" href="main-home.css">
+    <link class="CSS-1" rel="stylesheet" href="./main-otras-paginas.css">
+        <!--
+            <link rel="stylesheet" href="./movil.css">
+        -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        let width = window.innerWidth;
+        let estilo = document.getElementsByClassName('CSS-0');
+        if(width < 480){
+            estilo.removeAttribute('href');
+            estilo.setAttribute('href','./movil.css');
+        }
+    </script> 
+    <title>Barberia Aluraby AruDev</title>
+</head>
+<body>
+    <header class="header">
+        <img src="./imagenes/logo.png" alt="Barberia alura" class="logo">
+        <nav class="navbar">
+            <ul class="ul">
+                <li class="li"><a href="indexclase.html" class="a-links">home</a></li>
+                <li class="li"><a href="./productosalura.html" class="a-links">productos</a></li>
+                <li class="li"><a href="./contacto.html" class="a-links">contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-index">   
+        <img id="img-banner" src="./banner/banner.jpg" alt="Barberia Alura" />    
+        <section class="section-descripcion">
+            <h2 class="h2-descripcion">Sobre la Barbería Alura</h2>
+            <div class="div-descripcion-contenedor">
+                <img loading="lazy" src="./imagenes/utensilios[1].jpg" alt="Utencillos del barbero" id="img-utensillos">
+                <d  iv class="div-descripcion-parrafos">
+                    <p class="p-descripcion p1">Ubicada en el corazón de la ciudad, la <strong>Barbería Alura</strong> trae para el mercado lo que hay de mejor para su cabello y barba. Fundada en 2020, la Barbería Alura ya es destaque en la ciudad y conquista nuevos clientes diariamente. </p>
+                    <p class="p-descripcion p2"><em>Nuestra misión es: <strong>"Proporcionar autoestima y calidad de vida a nuestros clientes".</strong></em></p>
+                    <p class="p-descripcion p3">Ofrecemos profesionales experimentados que están constantemente observando los cambios y movimiento en el mundo de la moda, para así ofrecer a nuestros clientes las últimas tendencias. El atendimiento posee un padrón de excelencia y agilidad, garantizando calidad y satisfacción de nuestros clientes. </p>
+                </div>    
+            </div>
+        </section>
+        <section class="section-ubicacion">
+            <h2 class="h2-ubicacion">Nuestra Ubicación</h2>
+            <div class="div-ubicacion-contenedor">
+                <p class="p-ubicacion">Nuestro establecimiento esta ubicado en el corazón de la ciudad</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4498404749!2d-46.634520584609966!3d-23.588194784669554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sCaelum%20-%20Education%20and%20Innovation!5e0!3m2!1ses-419!2sar!4v1664198467380!5m2!1ses-419!2sar"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe-ubicacion"></iframe>
+            </div>
+        </section>
+        <section class="section-diferenciales">
+            <h2 class="h2-diferencial">Diferenciales</h2>
+            <div class="div-diferencial-contenedor">
+                <ul>
+                    <li class="items">Atención personalizada a los clientes</li>
+                    <li class="items">Espacio diferenciado</li>
+                    <li class="items">Localización</li>
+                    <li class="items">Profesionales calificados</li>
+                    <li class="items">Puntualidad</li>
+                    <li class="items">Limpieza</li>
+                </ul>
+                <img id="img-barba" loading="lazy" src="./diferenciales/diferenciales.jpg"alt="foto de corte de barba de nuestros especialistas">
+            <div>
+        </section>
+        <section class="section-video">
+            <div class="div-video-contenedor">
+                <iframe id="video-iframe" width="100%" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>    
+    </main>
+    <footer class="footer">
+        <img id="img-footer" src="./imagenes/logo-blanco.png" alt="barba blanca">
+        <p class="parrafo-footer">&copy; copyrigth by AruDev</p>
+    </footer>
+    
+</body>
+</html>

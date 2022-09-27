@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+
+.header {
+    background-color: #ccc;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Raleway', sans-serif;
+}
+
+.logo {
+    margin: auto 10vh;
+    height: 18vh;    
+}
+
+.navbar {
+    margin: auto 10vh;
+    text-transform: uppercase;
+}
+
+.ul {
+    list-style: none;display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+}
+
+.li {
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.section-productos {
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;flex-wrap: wrap;
+}
+
+.a-links {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 22px;
+    text-shadow: rgb(47, 41, 41) 2px 2px 18px;
+}
+
+.a-links:hover {
+    color: goldenrod;
+    text-shadow: rgb(246, 244, 239) 2px 2px 18px;
+}
+
+.a-links:active {
+    color: #000000;
+}
+
+.article {
+
+    margin:7vh auto;
+    border:solid black 5px ;
+    max-width: 320px;
+    min-width: 270px;
+    border-radius: 20px;
+    text-align: center;
+}
+.article:hover, .article-h2:hover {
+    cursor: pointer;
+    border: solid goldenrod 6px;
+    box-shadow: #736e6e 2px 2px 12px;
+    box-shadow: #736e6e -1px -1px 12px;
+    text-shadow: 1px 1px 35px goldenrod;
+}
+.article:active {
+    border: solid #088c19 6px;
+    cursor: pointer;
+    box-shadow: #736e6e 2px 2px 12px;
+    box-shadow: #736e6e -1px -1px 12px;
+}
+
+.article:hover h2{
+    font-size: 36px;
+    border: none;
+    box-shadow: none;
+    box-shadow: none;
+}
+.article-h2 {
+    font-weight:bolder;
+    font-size: 32px;
+}
+.parrafo {
+    padding: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    word-wrap: normal;
+}
+.precio {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.footer{
+    margin-top: auto;
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+.footer img{
+    height:150px;   
+    width: 120px;
+}
+.parrafo-footer{
+    color: #ffffff;
+    font-size: small;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+    justify-content: center;
+    vertical-align: baseline;
+    align-items: flex-start;
+    margin: 20px auto;
+    font-size: 18px;
+}
+.container, .input-inicio, .mensaje {
+    width: 40vw;
+    max-width: 40vw;
+    min-width: 20vw;
+}
+.input-inicio {
+    font-size: 18px;
+}
+.input-inicio, .mensaje {
+    font-family: monospace;
+}
+.fieldset{
+    border: none;
+    margin: 10px 0px;
+}
+.fieldset input{
+    margin: 10px 0px;
+}
+.mensaje {
+    margin-top: 10px;
+}
+.fieldset-contactame {
+    display: flex;
+    flex-direction: column;
+}
+.select select {
+    font-size: 18px;
+    width: 14vw;
+    text-align: left;
+}
+
+.check {
+    margin: 15px 0px 15px 15px;
+}
+.boton-enviar {
+    margin: 10px auto;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 8px;
+    color: white;
+    height: 7vh;
+    width: 29vw;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all ease-out;
+    cursor: pointer;
+}
+.boton-enviar:hover {
+    background-color: darkorange;
+    transform: scaleX(1.2);
+}
+
+.table-container {
+    margin: 30px auto;
+}
+.table {
+    border: solid 0.5px black;
+    border-spacing: 0px;;
+}
+.table thead{
+    color: #ffffff;
+    background-color: #393d40;
+    font-size: 20px;
+    font-weight:900;
+}
+.table td {
+    padding: 20px;
+}
+
+@media screen and (max-width:480px){
+    .header{
+        position: relative;
+    }
+    .logo{
+        margin: 0;
+        position: inherit;
+        left:1em;
+    }
+    .navbar{
+        margin: 0%;
+        position: inherit;   
+    }
+    .navbar > ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}

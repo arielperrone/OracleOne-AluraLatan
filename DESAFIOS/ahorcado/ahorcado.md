@@ -1,0 +1,5 @@
+Ahorcado de Alura  
+Para lograr algo un poco diferente de lo que hacen mis compañeros la página tendrá tres instancias dentro de la misma pagina que se manejarán mostrando y ocultando las secciones. la primera es la bienvenida donde se registrara el nombre de usuario que luego sera utilizado para enviarle mensajes y se determinará el nivel de dificultad. la segunda sera el juego en si donde habrá 5 campos, el superior tendra el nombre del usuario, el nivel de dificultad y la cantidad de intentos que le queden. el del centro tendra el dibujo del ahorcado, el inferior los casilleros donde se iran destapando las letras que hagan match, el de la derecha las letras que el usuario ya eligio y en el panel de la izquierda algunas frases celebres y palabras de aliento.  
+  
+  
+25/9 creados los archivos de html, css, js y md. Armado del html y primeros bosquejos de la pagina. Enlazados los archivos.

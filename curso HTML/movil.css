@@ -1,0 +1,152 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(white 20%, grey 60%,black 100%);
+}
+.header{
+    position: absolute;    
+}
+.logo{
+    position: relative;
+    border: solid 1px #fff;
+    border-radius:75px;
+    box-shadow: inset 75px 75px 10px 40px rgba(255,255,255,0.5),
+                inset -45px -45px 30px 30px rgba(255,255,255,0.5),
+                5px 5px 5px 5px rgba(255,255,255,0.5),
+                -5px -5px 5px 5px rgba(255,255,255,0.5);
+    
+    top: 1.5em;
+    left: 50%;
+    z-index: 1;
+}
+#img-banner{
+    position:relative;
+    width: 100%;
+    height: 20em;
+    filter: blur(5px);
+    z-index: 0;
+}
+.navbar{
+    position: relative;
+    top: -15em;
+    left: 6em;
+    z-index: 3;
+    opacity: 0;
+    transition: all 700ms;
+}
+.navbar:hover{
+    opacity: 1;
+    z-index: 1;
+    border-radius: 30%;
+    box-shadow:  5px 5px 10px 40px rgba(255,255,255,0.5);    
+}
+.navbar > ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.li > a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.li{
+    height: 90px;
+    box-shadow:  5px 5px 40px 40px rgba(255,255,255,0.5);
+    background-color: rgba(200,200,200,0.5);
+}
+.li a{
+    color: aliceblue;
+    text-shadow: #bbb 4px 4px 5px, #999 -4px -4px 5px;
+    font-size: 2em;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-index{
+    width: auto;
+}
+.section.descripcion{
+    width: 100%;
+    height: fit-content;
+}
+.h2-descripcion{
+    margin: 1em auto;
+    text-align: center;
+    font-style: oblique;
+}
+.div-descripcion-parrafos{
+    padding: 10px;
+    height: 420px;
+    z-index: 3;
+}
+.p-descripcion {
+    padding: 5px;
+    line-break: normal;
+    text-shadow: 1px 1px 1px #000;
+}
+#img-utensillos{
+    position: absolute;
+    width: 100%;
+    opacity: 0.1;
+    margin: 1em 0;
+    filter: grayscale(0.5);
+    height: 420px;
+}
+.section-ubicacion{
+    margin: 2em;
+}
+.p-ubicacion{
+    margin: 1em 0;
+}
+.section-diferenciales{
+    position: relative;
+    height: 18em;
+    text-align: center;
+}
+#img-barba{
+    width:  100%;
+    height: 18em;
+    position: relative;
+    top: -13.2em;
+}
+.h2-diferencial {
+    position: relative;
+    top: 2em;
+    color: aliceblue;
+    z-index: 1;
+    border:solid 2px red;
+    border-radius: 22px;
+    margin: 0 25%;
+    background-color: black;
+}
+.items {
+    position: relative;
+    top: 3em;
+    z-index: 1;
+    color: aliceblue;
+    font-size: 1.2em;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style-type: none;
+}
+.section-video{
+    margin-top: 2em;
+}
+.div-video-contenedor
+#video-iframe{
+    width:100%;
+}
+.footer{
+ color: #fff;
+}
+#img-footer{
+    height: 7em;
+    margin: 0 40%;
+}
+.parrafo-footer{
+    text-align: center;
+    margin-bottom: 2em;
+}
