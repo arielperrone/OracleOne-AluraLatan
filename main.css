@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{box-sizing: border-box;}
+.body{background: linear-gradient(145deg, rgb(235,235,235) 60%,rgb(90,90,90) 98%);height: 100%;margin: 0;}
+
+
+/* 
+HEADER --------------------------------
+*/
+.img_perfil{position: absolute;height:10em;}
+.header_principal{width: 100%; background: linear-gradient(145deg,rgb(0, 0, 0) 0%,rgb(6, 6, 101) 40%,rgb(43, 43, 107) 80%);}
+.header_principal:hover{background: linear-gradient(145deg,rgb(0, 0, 0) 0%,
+    rgb(7, 7, 145) 40%,rgb(52, 52, 172) 100%);}
+
+.nav_principal{display: flex;flex-direction: row;justify-content: end;}
+.nav_principal > ul{display: flex;flex-direction: row;width: 70%;justify-content: flex-end;}
+.nav_li{height: 8vh;width: 24vw;margin: 3vh 3vw;padding-top:15px ; text-align: center;list-style:none;}
+.nav_link{text-decoration:none;outline:none;color: #121212;}
+
+
+/*
+MAIN -----------------------------------
+.div_link{}
+*/
+
+.main_principal{display: flex;flex-direction: row;}
+
+.izq{width: 60%;}
+.h2_practicas{text-align: center;}
+.section_izquierda{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;}
+.div_izq{height: 10vw;width: 10vw;margin: 1vw;background-color: rgb(245,245,245); border-radius:25px;display: flex;flex-direction: column; justify-content: center;align-items: center;box-shadow: 1vw 1vw 10px darkgray;padding: 5px;text-align: center;}
+.alineacion_divs{display: flex;flex-direction: column;justify-content: center;}
+
+.der{width: 40%;}
+.h2_challenges{text-align: center;}
+.div_der{height: 10vw;width: 10vw;margin: 1vw;background-color: rgb(245,245,245); border-radius:25px;display: flex;flex-direction: column; justify-content: center;align-items: center;box-shadow: 1vw 1vw 10px rgba(100,100,100,0.7);padding: 5px;text-align: center;}
+.section_derecha{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;}
+
+.div_link{text-decoration:none;outline:none;color: #121212;}
+
+.font_1{font-family: 'Fredoka One', cursive; font-size: 1.8rem;color: rgb(237, 237, 237);  text-shadow:3px 3px 4px #121212;}
+.font_2{font-family: 'Fredoka One', cursive; font-size: 1.4rem;color: rgb(74, 74, 74);}
+.font_3{font-family: 'Fredoka One', cursive; font-size: 1rem;color: rgb(62, 47, 47);}
+
+/*
+OCULTAMIENTO -------------------------------------
+*/
+#boton_1, #boton_2, #boton_3{border: 0px;background-color: rgba(0,0,0,0);cursor: pointer;}
+.versiones_0{display:inline;}
+.versiones_1{display: none;}
