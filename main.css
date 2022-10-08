@@ -8,14 +8,15 @@
 /* 
 HEADER --------------------------------
 */
-.img_perfil{position: absolute;height:10em;}
-.header_principal{width: 100%; background: linear-gradient(145deg,rgb(0, 0, 0) 0%,rgb(6, 6, 101) 40%,rgb(43, 43, 107) 80%);}
-.header_principal:hover{background: linear-gradient(145deg,rgb(0, 0, 0) 0%,
-    rgb(7, 7, 145) 40%,rgb(52, 52, 172) 100%);}
+.header_princimpal{display:flex;flex-direction: row;flex-wrap: wrap;}
+.header_principal{width: 100%;min-height: 10em;}
+.header_principal{background: linear-gradient(145deg,rgb(0, 0, 0) 0%,rgb(6, 6, 101) 40%,rgb(43, 43, 107) 80%);}
+.header_principal:hover{background: linear-gradient(145deg,rgb(0, 0, 0) 0%,rgb(7, 7, 145) 40%,rgb(52, 52, 172) 100%);}
+.img_perfil{position:absolute;height:10em;}
 
-.nav_principal{display: flex;flex-direction: row;justify-content: end;}
-.nav_principal > ul{display: flex;flex-direction: row;width: 70%;justify-content: flex-end;}
-.nav_li{height: 8vh;width: 24vw;margin: 3vh 3vw;padding-top:15px ; text-align: center;list-style:none;}
+.nav_principal{display: flex;flex-direction: row;justify-content: end;flex-wrap: wrap;}
+.nav_ul{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-end;}
+.nav_li{height: 5em;width: 12em; min-width: 16em; margin: 1em 2em;padding-top:15px ; text-align: center;list-style:none;}
 .nav_link{text-decoration:none;outline:none;color: #121212;}
 
 
@@ -24,17 +25,17 @@ MAIN -----------------------------------
 .div_link{}
 */
 
-.main_principal{display: flex;flex-direction: row;}
+.main_principal{display: flex;flex-direction: row;flex-wrap: wrap;min-width:480px;}
 
 .izq{width: 60%;}
 .h2_practicas{text-align: center;}
 .section_izquierda{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;}
-.div_izq{height: 10vw;width: 10vw;margin: 1vw;background-color: rgb(245,245,245); border-radius:25px;display: flex;flex-direction: column; justify-content: center;align-items: center;box-shadow: 1vw 1vw 10px darkgray;padding: 5px;text-align: center;}
+.div_izq{min-height: 10em;min-width: 10em;margin: 1em;max-height:10em;max-width: 10em; background-color: rgb(245,245,245); border-radius:25px;display: flex;flex-direction: column; justify-content: center;align-items: center;box-shadow: 1vw 1vw 10px darkgray;padding: 5px;text-align: center;}
 .alineacion_divs{display: flex;flex-direction: column;justify-content: center;}
 
 .der{width: 40%;}
 .h2_challenges{text-align: center;}
-.div_der{height: 10vw;width: 10vw;margin: 1vw;background-color: rgb(245,245,245); border-radius:25px;display: flex;flex-direction: column; justify-content: center;align-items: center;box-shadow: 1vw 1vw 10px rgba(100,100,100,0.7);padding: 5px;text-align: center;}
+.div_der{min-height: 10em;min-width: 10em;margin: 1em;max-height:10em;max-width: 10em;margin: 1vw;background-color: rgb(245,245,245); border-radius:25px;display: flex;flex-direction: column; justify-content: center;align-items: center;box-shadow: 1vw 1vw 10px rgba(100,100,100,0.7);padding: 5px;text-align: center;}
 .section_derecha{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;}
 
 .div_link{text-decoration:none;outline:none;color: #121212;}
@@ -49,3 +50,15 @@ OCULTAMIENTO -------------------------------------
 #boton_1, #boton_2, #boton_3{border: 0px;background-color: rgba(0,0,0,0);cursor: pointer;}
 .versiones_0{display:inline;}
 .versiones_1{display: none;}
+
+/*
+RESPONSIVE ---------------------------------------
+
+@media screen and (max-width: 481){
+    .img_perfil{display: none;}
+    .nav_principal{display: flex;flex-direction: column;flex-wrap: wrap;}
+    .nav_principal > ul{flex-direction:column;justify-content: center;}
+    .nav_li{height: 150px;width: 24vw; min-width: 23; margin: 2vh 2vw;padding-top:5px ; text-align: center;list-style:none;}
+    .nav_link{font-size: 10px;}
+}
+*/
